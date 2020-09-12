@@ -67,7 +67,7 @@ resource "launchdarkly_custom_role" "write" {
   policy_statements {
     effect        = "deny"
     not_resources = ["proj/${var.project_name}"]
-    actions       = [
+    actions = [
       "updateTags",
       "updateIncludeInSnippetByDefault",
       "viewProject"
@@ -88,7 +88,7 @@ resource "launchdarkly_custom_role" "read" {
   policy_statements {
     effect        = "deny"
     not_resources = ["proj/${var.project_name}"]
-    actions       = [
+    actions = [
       "viewProject"
     ]
   }
