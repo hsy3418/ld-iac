@@ -3,19 +3,6 @@ resource "launchdarkly_project" "project" {
   name = var.project_name
 }
 
-resource "launchdarkly_environment" "staging" {
-  name  = "Staging"
-  key   = "staging"
-  color = "ff00ff"
-  tags  = ["staging"]
-
-  project_key = launchdarkly_project.project.key
-  lifecycle {
-    ignore_changes = [
-      color,
-    ]
-  }
-}
 
 resource "launchdarkly_environment" "sit" {
   name  = "SIT"
